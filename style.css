@@ -1,6 +1,11 @@
 body {
-    background-color: #436126;
+    background-color: #0ce7ca;
 }
 h1 {
-    font-size: 80px; color: #85D538; text-align: center;
+    font-size: 80px;
+    color: #85D538;
+    text-align: center;
+    background-color: #436126;
+    border: solid 0px;
+    border-radius: 3%;
 }
