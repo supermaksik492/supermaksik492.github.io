@@ -22,3 +22,11 @@ nav a {
 nav a:hover {
     color: rgb(155, 155, 247);
 }
+.gallery button {
+    color: white;
+    transition: 0,5s;
+}
+
+.gallery button:hover {
+transform: scale(103%);
+}
