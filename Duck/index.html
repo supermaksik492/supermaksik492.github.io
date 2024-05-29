@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de la Oca</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        #tablero {
+            position: relative;
+            width: 600px;
+            height: 600px;
+            background-image: url('tu-imagen-de-tablero.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .ficha {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .ficha.rojo { background-color: red; }
+        .ficha.verde { background-color: green; }
+        .ficha.azul { background-color: blue; }
+        .ficha.amarillo { background-color: yellow; }
+    </style>
+</head>
+<body>
+
+<div id="tablero">
+    <div class="ficha rojo" id="ficha-rojo" style="top: 10px; left: 10px;"></div>
+    <div class="ficha verde" id="ficha-verde" style="top: 10px; left: 60px;"></div>
+    <div class="ficha azul" id="ficha-azul" style="top: 10px; left: 110px;"></div>
+    <div class="ficha amarillo" id="ficha-amarillo" style="top: 10px; left: 160px;"></div>
+</div>
+
+<script>
+    document.querySelectorAll('.ficha').forEach(ficha => {
+        ficha.addEventListener('mousedown', function(e) {
+            const element = e.target;
+            let shiftX = e.clientX - element.getBoundingClientRect().left;
+            let shiftY = e.clientY - element.getBoundingClientRect().top;
+
+            function moveAt(pageX, pageY) {
+                element.style.left = pageX - shiftX + 'px';
+                element.style.top = pageY - shiftY + 'px';
+            }
+
+            function onMouseMove(event) {
+                moveAt(event.pageX, event.pageY);
+            }
+
+            document.addEventListener('mousemove', onMouseMove);
+
+            element.onmouseup = function() {
+                document.removeEventListener('mousemove', onMouseMove);
+                element.onmouseup = null;
+            };
+        });
+
+        ficha.ondragstart = function() {
+            return false;
+        };
+    });
+</script>
+
+</body>
+</html>
