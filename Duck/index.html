@@ -18,7 +18,8 @@
             position: relative;
             width: 600px;
             height: 600px;
-            background-image: url('tu-imagen-de-tablero.jpg');
+            /* Cambia 'tablero.jpg' por el nombre de tu archivo de imagen */
+            background-image: url('tablero.jpg');
             background-size: cover;
             background-position: center;
         }
@@ -62,8 +63,18 @@
 
             document.addEventListener('mousemove', onMouseMove);
 
+            function onKeyUp(event) {
+                if (event.key === 'Enter') {
+                    document.removeEventListener('mousemove', onMouseMove);
+                    document.removeEventListener('keyup', onKeyUp);
+                }
+            }
+
+            document.addEventListener('keyup', onKeyUp);
+
             element.onmouseup = function() {
                 document.removeEventListener('mousemove', onMouseMove);
+                document.removeEventListener('keyup', onKeyUp);
                 element.onmouseup = null;
             };
         });
