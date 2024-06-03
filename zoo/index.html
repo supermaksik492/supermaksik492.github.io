@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Zoológico</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="zoo">
+        <h1>Bienvenido al Zoológico Virtual</h1>
+        <div class="animal" id="lion" onclick="showInfo('lion')">
+            <img src="https://via.placeholder.com/150?text=León" alt="León">
+            <p>León</p>
+        </div>
+        <div class="animal" id="elephant" onclick="showInfo('elephant')">
+            <img src="https://via.placeholder.com/150?text=Elefante" alt="Elefante">
+            <p>Elefante</p>
+        </div>
+        <div class="animal" id="giraffe" onclick="showInfo('giraffe')">
+            <img src="https://via.placeholder.com/150?text=Jirafa" alt="Jirafa">
+            <p>Jirafa</p>
+        </div>
+        <div id="info"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
