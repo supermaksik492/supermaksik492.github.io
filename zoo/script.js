@@ -1,3 +1,5 @@
+let selectedFood = '';
+
 function showInfo(animal) {
     let info = document.getElementById('info');
     let text = '';
@@ -17,4 +19,36 @@ function showInfo(animal) {
     }
 
     info.textContent = text;
+}
+
+function selectFood(food) {
+    selectedFood = food;
+    document.getElementById('info').textContent = `Has seleccionado: ${food}`;
+}
+
+function feedAnimal(animal) {
+    let feedback = document.getElementById('feedback');
+    let success = false;
+
+    switch (animal) {
+        case 'lion':
+            success = selectedFood === 'meat';
+            break;
+        case 'elephant':
+            success = selectedFood === 'fruits';
+            break;
+        case 'giraffe':
+            success = selectedFood === 'leaves';
+            break;
+        default:
+            success = false;
+    }
+
+    if (success) {
+        feedback.textContent = `¡Correcto! Has alimentado al ${animal} correctamente.`;
+        feedback.style.color = 'green';
+    } else {
+        feedback.textContent = `¡Incorrecto! El ${animal} no come ${selectedFood}.`;
+        feedback.style.color = 'red';
+    }
 }

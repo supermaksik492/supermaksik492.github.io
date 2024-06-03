@@ -9,19 +9,28 @@
 <body>
     <div class="zoo">
         <h1>Bienvenido al Zoológico Virtual</h1>
-        <div class="animal" id="lion" onclick="showInfo('lion')">
-            <img src="https://via.placeholder.com/150?text=León" alt="León">
-            <p>León</p>
+        <div class="animals">
+            <div class="animal" id="lion" onclick="feedAnimal('lion')">
+                <img src="https://via.placeholder.com/150?text=León" alt="León">
+                <p>León</p>
+            </div>
+            <div class="animal" id="elephant" onclick="feedAnimal('elephant')">
+                <img src="https://via.placeholder.com/150?text=Elefante" alt="Elefante">
+                <p>Elefante</p>
+            </div>
+            <div class="animal" id="giraffe" onclick="feedAnimal('giraffe')">
+                <img src="https://via.placeholder.com/150?text=Jirafa" alt="Jirafa">
+                <p>Jirafa</p>
+            </div>
         </div>
-        <div class="animal" id="elephant" onclick="showInfo('elephant')">
-            <img src="https://via.placeholder.com/150?text=Elefante" alt="Elefante">
-            <p>Elefante</p>
-        </div>
-        <div class="animal" id="giraffe" onclick="showInfo('giraffe')">
-            <img src="https://via.placeholder.com/150?text=Jirafa" alt="Jirafa">
-            <p>Jirafa</p>
+        <h2>Selecciona la comida:</h2>
+        <div class="foods">
+            <button onclick="selectFood('meat')">Carne</button>
+            <button onclick="selectFood('fruits')">Frutas</button>
+            <button onclick="selectFood('leaves')">Hojas</button>
         </div>
         <div id="info"></div>
+        <div id="feedback"></div>
     </div>
     <script src="script.js"></script>
 </body>
