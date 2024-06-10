@@ -1,0 +1,84 @@
+body {
+    background-color: rgb(117, 117, 117);
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+.header {
+    width: 70%;
+    height: 60px;
+    background-color: aliceblue;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 15px;
+}
+
+.logo a {
+    display: block;
+    position: absolute;
+    height: 57.5px;
+    width: 55px;
+    border-radius: 50%;
+    z-index: 1;
+    transition: 0.2s;
+}
+
+.logo a:hover {
+    background-color: rgba(185, 185, 185, 0.503);
+}
+
+.logo img {
+    width: 55px;
+    border-radius: 50%;
+    padding-top: 2.5px;
+    z-index: 2;
+}
+
+nav {
+    padding-top: 18px;
+    height: 60px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-family: Font;
+    font-size: 20px;
+    padding-right: 20px;
+    transition: 0.2s;
+}
+
+nav a:hover {
+    color: rgb(185, 185, 185);
+}
+
+@font-face {
+    font-family: Font;
+    src: url(../font/font.ttf);
+}
+
+@media only screen and (max-width: 600px) {
+    .header {
+        width: 99%;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .header a {
+        font-size: 4vmin;
+    }
+}
+
+@media only screen and (max-width: 260px) {
+    .logo img {
+        width: 15vmin;
+    }
+
+    .logo a {
+        width: 15vmin;
+        height: 15vmin;
+    }
+}
