@@ -19,7 +19,7 @@ header {
 .logo a {
     display: block;
     position: absolute;
-    height: 57.5px;
+    height: 57px;
     width: 55px;
     border-radius: 12.5%;
     z-index: 1;
